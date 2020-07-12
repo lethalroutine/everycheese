@@ -318,5 +318,6 @@ tags
 
 ### Project template
 everycheese/media/
+everycheese.db
 
 .pytest_cache/
