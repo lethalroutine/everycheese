@@ -3,10 +3,12 @@ Base settings to build other settings files upon.
 """
 
 from pathlib import Path
+import os
 
 import environ
 
 # everycheese/
+
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 APPS_DIR = BASE_DIR / "everycheese"
 
@@ -45,7 +47,7 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'everycheese.db'),
+        'NAME': os.path.join(BASE_DIR, 'everycheese.db'),
     }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
